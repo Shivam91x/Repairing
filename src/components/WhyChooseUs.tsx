@@ -1,0 +1,76 @@
+
+export const WhyChooseUs = () => {
+  const features = [
+    {
+      title: "Expert Technicians",
+      description: "Certified professionals with 10+ years of experience",
+      icon: "👨‍🔧"
+    },
+    {
+      title: "Quality Parts",
+      description: "Genuine spare parts with manufacturer warranty",
+      icon: "⚙️"
+    },
+    {
+      title: "24/7 Support",
+      description: "Round-the-clock customer service and emergency repairs",
+      icon: "📞"
+    },
+    {
+      title: "Affordable Pricing",
+      description: "Transparent pricing with no hidden charges",
+      icon: "💰"
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            We're committed to providing exceptional service and quality products for your home
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
+            <div 
+              key={index} 
+              className="text-center group animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center mt-16">
+          <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Ready to Get Started?
+            </h3>
+            <p className="text-xl text-gray-600 mb-8">
+              Contact us today for a free consultation and quote
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105">
+                Call Now: +91 98765 43210
+              </button>
+              <button className="border-2 border-green-500 text-green-600 hover:bg-green-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105">
+                WhatsApp Us
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
