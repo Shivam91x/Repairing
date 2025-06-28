@@ -92,7 +92,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gray-900 text-gray-100;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-feature-settings: 'cv11', 'ss01';
     font-variation-settings: 'opsz' 32;
@@ -121,6 +121,10 @@ html {
   animation-delay: 500ms;
 }
 
+.delay-700 {
+  animation-delay: 700ms;
+}
+
 /* Custom utility classes */
 .text-shadow {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -129,4 +133,20 @@ html {
 .backdrop-blur-glass {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.8);
+}
+
+/* Glow effects for dark theme */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
