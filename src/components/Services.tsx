@@ -42,11 +42,11 @@ export const Services = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-800/50">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Our Services</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Professional repair and maintenance services for all your home appliances
           </p>
         </div>
@@ -55,20 +55,20 @@ export const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-gray-700 shadow-lg bg-gray-800/70 backdrop-blur-sm glow-blue hover:glow-cyan"
+              className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg bg-white"
             >
               <CardHeader className="text-center pb-4">
-                <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${service.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300 glow-blue`}>
+                <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${service.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
                   {service.icon}
                 </div>
-                <CardTitle className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                   {service.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                <p className="text-gray-600 leading-relaxed">{service.description}</p>
                 <div className="mt-6">
-                  <button className="text-cyan-400 font-semibold hover:text-blue-400 transition-colors group-hover:underline">
+                  <button className="text-blue-600 font-semibold hover:text-blue-700 transition-colors group-hover:underline">
                     Learn More →
                   </button>
                 </div>
