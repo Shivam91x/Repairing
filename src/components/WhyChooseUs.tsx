@@ -24,11 +24,11 @@ export const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+    <section className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-white mb-4">Why Choose Us</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             We're committed to providing exceptional service and quality products for your home
           </p>
         </div>
@@ -37,34 +37,34 @@ export const WhyChooseUs = () => {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="text-center group animate-fade-in"
+              className="text-center group animate-fade-in glass p-6 rounded-lg hover:glow-blue transition-all duration-300"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              <p className="text-gray-300 leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
 
         {/* CTA Section */}
         <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+          <div className="glass rounded-2xl shadow-xl p-8 max-w-4xl mx-auto glow-blue">
+            <h3 className="text-3xl font-bold text-white mb-4">
               Ready to Get Started?
             </h3>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-300 mb-8">
               Contact us today for a free consultation and quote
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105">
+              <button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 glow-blue">
                 Call Now: +91 98765 43210
               </button>
-              <button className="border-2 border-green-500 text-green-600 hover:bg-green-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105">
+              <button className="border-2 border-green-500 text-green-400 hover:bg-green-500/10 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 glass">
                 WhatsApp Us
               </button>
             </div>

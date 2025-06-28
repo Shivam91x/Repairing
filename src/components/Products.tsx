@@ -43,11 +43,11 @@ export const Products = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Premium Products</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-white mb-4">Premium Products</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             High-quality home appliances from trusted brands with warranty and support
           </p>
         </div>
@@ -56,7 +56,7 @@ export const Products = () => {
           {products.map((product, index) => (
             <Card 
               key={index} 
-              className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border-0 shadow-lg"
+              className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border-gray-700 shadow-lg bg-gray-800/70 backdrop-blur-sm glow-blue hover:glow-cyan"
             >
               <div className="relative overflow-hidden">
                 <img 
@@ -64,20 +64,20 @@ export const Products = () => {
                   alt={product.name}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
                 <div className="absolute top-4 left-4">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-3 py-1 rounded-full text-sm font-medium glow-blue">
                     {product.category}
                   </span>
                 </div>
               </div>
               
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
                   {product.name}
                 </h3>
-                <p className="text-2xl font-bold text-blue-600 mb-4">{product.price}</p>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white group-hover:scale-105 transition-transform duration-300">
+                <p className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4">{product.price}</p>
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white group-hover:scale-105 transition-transform duration-300 glow-blue">
                   View Details
                 </Button>
               </CardContent>
