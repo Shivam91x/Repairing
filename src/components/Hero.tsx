@@ -1,8 +1,28 @@
 import { Button } from "@/components/ui/button";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
+  // For animating stats on scroll
+  const statsSectionRef = useRef(null);
+  const [statsVisible, setStatsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = statsSectionRef.current;
+    if (!section) return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStatsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden pt-20">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
@@ -49,9 +69,9 @@ export const Hero = () => {
                   src="/Shivam_Yadav_A_colored_cartoon-style_Indian_repairman_standing_confidently_wit_4702c810-f030-4d7d-9d63-a9f1b3dc9aba.png"
                   alt="Repair Expert"
                   className="
-                    w-[180px]
-                    xs:w-[240px]
-                    sm:w-[320px]
+                    w-[280px]
+                    xs:w-[320px]
+                    sm:w-[400px]
                     md:w-[420px]
                     lg:w-[500px]
                     object-contain
@@ -67,12 +87,17 @@ export const Hero = () => {
                   xs:text-6xl
                   sm:text-7xl
                   md:text-8xl
-                  italic font-extrabold text-blue-800 z-30 drop-shadow-lg
+                  italic font-extrabold z-30 drop-shadow-lg
                   mt-2 md:mt-0
                   md:ml-[20px]
                 "
               >
-                Repair
+                <span style={{ color: "#9D4221" }}>R</span>
+                <span style={{ color: "gray" }}>e</span>
+                <span style={{ color: "#9D4221" }}>p</span>
+                <span style={{ color: "gray" }}>a</span>
+                <span style={{ color: "gray" }}>i</span>
+                <span style={{ color: "#9D4221" }}>r</span>
               </span>
             </div>
           </div>
@@ -97,8 +122,12 @@ export const Hero = () => {
         </div>
 
         {/* Stats Section */}
-        <section className="relative bg-white py-12 xs:py-16 sm:py-20 px-2 xs:px-4 sm:px-6 md:px-12 lg:px-24 text-center">
-          <div className="absolute top-2 left-2 xs:top-4 xs:left-4 sm:top-6 sm:left-6 text-lg text-bold xs:text-sm uppercase tracking-wider text-black">
+        <section
+          className="relative bg-white py-12 xs:py-16 sm:py-20 px-2 xs:px-4 sm:px-6 md:px-12 lg:px-24 text-center"
+          id="hero-stats-section"
+          ref={statsSectionRef}
+        >
+          <div className="absolute top-2 left-2 xs:top-4 xs:left-4 sm:top-6 sm:left-6 text-lg font-bold xs:text-lg uppercase tracking-wider text-black">
             We Provide
           </div>
 
@@ -127,14 +156,17 @@ export const Hero = () => {
 
               const AnimatedStat = ({
                 stat,
-                duration = 1500,
+                duration = 3000,
+                statsVisible,
               }: {
                 stat: { number: string; label: string };
                 duration?: number;
+                statsVisible: boolean;
               }) => {
                 const [display, setDisplay] = useState(stat.number);
 
                 useEffect(() => {
+                  if (!statsVisible) return;
                   const { value, suffix, isSpecial } = parseStatNumber(
                     stat.number
                   );
@@ -142,10 +174,11 @@ export const Hero = () => {
                     let startTimestamp: number | null = null;
                     function step(timestamp: number) {
                       if (!startTimestamp) startTimestamp = timestamp;
-                      const progress = Math.min(
+                      const linear = Math.min(
                         (timestamp - startTimestamp) / duration,
                         1
                       );
+                      const progress = 1 - Math.pow(1 - linear, 2);
                       const current = Math.floor(progress * (value - 0) + 0);
                       if (progress < 1) {
                         setDisplay(`${current}/7`);
@@ -161,10 +194,11 @@ export const Hero = () => {
                     let startTimestamp: number | null = null;
                     function step(timestamp: number) {
                       if (!startTimestamp) startTimestamp = timestamp;
-                      const progress = Math.min(
+                      const linear = Math.min(
                         (timestamp - startTimestamp) / duration,
                         1
                       );
+                      const progress = 1 - Math.pow(1 - linear, 2);
                       const current = Math.floor(progress * (value - 0) + 0);
                       if (progress < 1) {
                         setDisplay(`${current}${suffix}`);
@@ -179,7 +213,7 @@ export const Hero = () => {
                   } else {
                     setDisplay(stat.number);
                   }
-                }, [stat.number, duration]);
+                }, [stat.number, duration, statsVisible]);
 
                 return (
                   <div className="text-2xl xs:text-3xl md:text-4xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform">
@@ -189,10 +223,10 @@ export const Hero = () => {
               };
 
               const stats = [
-                { number: "1000+", label: "Happy Customers", duration: 1000 },
-                { number: "10+", label: "Years Experience", duration: 1500 },
-                { number: "24/7", label: "Support Available", duration: 1500 },
-                { number: "99%", label: "Satisfaction Rate", duration: 1500 },
+                { number: "1000+", label: "Happy Customers", duration: 3000 },
+                { number: "10+", label: "Years Experience", duration: 3500 },
+                { number: "24/7", label: "Support Available", duration: 3500 },
+                { number: "99%", label: "Satisfaction Rate", duration: 3200 },
               ];
 
               return (
@@ -213,7 +247,11 @@ export const Hero = () => {
                       key={index}
                       className="text-center group bg-gray-50 p-4 xs:p-6 rounded-lg shadow hover:shadow-lg transition-all duration-300"
                     >
-                      <AnimatedStat stat={stat} duration={stat.duration} />
+                      <AnimatedStat
+                        stat={stat}
+                        duration={stat.duration}
+                        statsVisible={statsVisible}
+                      />
                       <div className="text-gray-600 font-medium text-sm xs:text-base">
                         {stat.label}
                       </div>

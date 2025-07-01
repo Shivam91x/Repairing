@@ -10,7 +10,6 @@ import {
   Instagram,
   ArrowRight,
 } from "lucide-react";
-
 import { SiWhatsapp } from "react-icons/si";
 
 export const Footer = () => {
@@ -91,7 +90,7 @@ export const Footer = () => {
                   {services.map((service, index) => (
                     <li key={index}>
                       <a
-                        href="#"
+                        href="#services"
                         className="text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-center group"
                       >
                         <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3 group-hover:scale-125 transition-transform"></div>
@@ -108,20 +107,18 @@ export const Footer = () => {
                 </h4>
                 <ul className="space-y-3">
                   {[
-                    "About Us",
-                    "Contact",
-                    "Privacy Policy",
-                    "Terms of Service",
-                    "Careers",
-                    "Blog",
+                    { name: "About", href: "#about" },
+                    { name: "Contact", href: "#contact" },
+                    { name: "Products", href: "#products" },
+                    { name: "Services", href: "#services" },
                   ].map((link, index) => (
                     <li key={index}>
                       <a
-                        href="#"
+                        href={link.href}
                         className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
                       >
                         <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
-                        {link}
+                        {link.name}
                       </a>
                     </li>
                   ))}
