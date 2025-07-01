@@ -177,6 +177,34 @@ export const Products = () => {
             </Button>
           </div>
         </div>
+        {/* Call to Action Section */}
+        <section className="py-16 px-4 bg-gradient-to-r from-gray-600 via-gray-700 to-gray-600 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <div className="absolute top-10 right-10 w-16 h-16 border border-white/30 rounded-full animate-pulse"></div>
+          </div>
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <div
+              id="cta"
+              data-animate
+              className="transition-all duration-1500 transform opacity-100 translate-y-0 scale-100 rotate-0"
+            >
+              <h2 className="text-3xl font-bold text-white mb-4 animate-pulse">
+                Need Appliance Repair?
+              </h2>
+              <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto hover:text-white transition-colors duration-300">
+                Contact us today for professional repair services.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:scale-110 hover:rotate-1 hover:shadow-2xl transition-all duration-500 transform">
+                  Schedule Repair
+                </button>
+                <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 hover:scale-110 hover:-rotate-1 hover:shadow-2xl transition-all duration-500 transform">
+                  Call Now: (555) 123-4567
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   );

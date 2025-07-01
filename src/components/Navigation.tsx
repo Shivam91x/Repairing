@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // There is no issue with the nav links if your routes/pages exist and you are using React Router.
+  // The navItems array is already set up correctly for navigation.
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },

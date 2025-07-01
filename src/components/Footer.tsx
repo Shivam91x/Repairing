@@ -11,6 +11,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+import { SiWhatsapp } from "react-icons/si";
+
 export const Footer = () => {
   const contactInfo = [
     { icon: Phone, text: "+91 98765 43210", href: "tel:+919876543210" },
@@ -36,6 +38,7 @@ export const Footer = () => {
     { icon: Facebook, href: "#", color: "hover:text-blue-500" },
     { icon: Twitter, href: "#", color: "hover:text-sky-400" },
     { icon: Instagram, href: "#", color: "hover:text-pink-500" },
+    { icon: SiWhatsapp, href: "#", color: "hover:text-green-500" },
   ];
 
   return (
