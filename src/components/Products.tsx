@@ -157,13 +157,15 @@ export const Products = () => {
                     >
                       Visit Store
                     </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="flex-1 text-green-700 border-green-400 hover:bg-green-50 text-sm"
-                    >
-                      Call to Buy
-                    </Button>
+                    <a href="tel:1234567890" className="flex-1" tabIndex={-1}>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="w-full text-green-700 border-green-400 hover:bg-green-50 text-sm"
+                      >
+                        Call to Buy
+                      </Button>
+                    </a>
                   </div>
                 </CardContent>
               </Card>
