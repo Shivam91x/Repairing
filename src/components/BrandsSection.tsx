@@ -13,6 +13,10 @@ export const BrandsSection = () => {
     "/brands/crompton.svg",
     "/brands/philips.svg",
     "/brands/hitachi-2.svg",
+    "/brands/tcl.svg",
+    "/brands/sura.svg",
+    "/brands/honeywell.svg",
+    "/brands/ifa.svg",
   ];
 
   return (

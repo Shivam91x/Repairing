@@ -6,6 +6,7 @@ import AboutPage from "@/components/AboutPage";
 import { Products } from "@/components/Products";
 import { ProcessSection } from "@/components/ProcessSection";
 import { Footer } from "@/components/Footer";
+import ContactPage from "@/components/Contact";
 
 const Index = () => {
   return (
@@ -31,6 +32,10 @@ const Index = () => {
 
       <section id="process">
         <ProcessSection />
+      </section>
+
+      <section id="contact">
+        <ContactPage />
       </section>
 
       <section id="contact">
