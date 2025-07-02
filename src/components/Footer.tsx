@@ -20,7 +20,11 @@ export const Footer = () => {
       text: "info@homeappliance.com",
       href: "mailto:info@homeappliance.com",
     },
-    { icon: MapPin, text: "123 Main Street, City, State 12345", href: "#" },
+    {
+      icon: MapPin,
+      text: "123 Main Street, City, State 12345",
+      href: "https://maps.google.com/?q=123+Main+Street+City+State+12345",
+    },
     { icon: Clock, text: "Mon-Sat: 9AM-7PM", href: "#" },
   ];
 
@@ -34,10 +38,26 @@ export const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", color: "hover:text-blue-500" },
-    { icon: Twitter, href: "#", color: "hover:text-sky-400" },
-    { icon: Instagram, href: "#", color: "hover:text-pink-500" },
-    { icon: SiWhatsapp, href: "#", color: "hover:text-green-500" },
+    {
+      icon: Facebook,
+      href: "https://facebook.com/homeappliance",
+      color: "hover:text-blue-500",
+    },
+    {
+      icon: Twitter,
+      href: "https://twitter.com/homeappliance",
+      color: "hover:text-sky-400",
+    },
+    {
+      icon: Instagram,
+      href: "https://instagram.com/homeappliance",
+      color: "hover:text-pink-500",
+    },
+    {
+      icon: SiWhatsapp,
+      href: "https://wa.me/919876543210",
+      color: "hover:text-green-500",
+    },
   ];
 
   return (

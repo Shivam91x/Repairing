@@ -1,4 +1,7 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import ScrollAnimation from "@/components/ScrollAnimation";
 
 export const Services = () => {
   const services = [
@@ -47,49 +50,49 @@ export const Services = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="relative py-16 xs:py-20 sm:py-24 bg-gradient-to-br from-white to-blue-50 overflow-hidden">
+      {/* Decorative background shapes */}
+      <div className="absolute top-0 left-0 w-40 h-40 bg-blue-100 rounded-full opacity-30 blur-2xl -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-60 h-60 bg-cyan-100 rounded-full opacity-20 blur-3xl -z-10"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+        {/* Section Heading */}
+        <div className="text-center mb-14 sm:mb-16">
+          <h2 className="text-3xl xs:text-4xl font-bold text-gray-900 mb-4 leading-snug">
             Our{" "}
             <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded font-semibold shadow-sm inline-block transition-all duration-200">
               Repairing
             </span>{" "}
             Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Professional repair and maintenance services for all your home
-            appliances
+          <p className="text-base xs:text-lg text-gray-600 max-w-2xl mx-auto">
+            Professional repair and maintenance services for all your essential
+            home appliances.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => (
-            <Card
-              key={index}
-              className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg bg-white"
-            >
-              <CardHeader className="text-center pb-4">
-                <div
-                  className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${service.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}
-                >
-                  {service.icon}
-                </div>
-                <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                  {service.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
-                {/* <div className="mt-6">
-                  <button className="text-blue-600 font-semibold hover:text-blue-700 transition-colors group-hover:underline">
-                    Learn More →
-                  </button>
-                </div> */}
-              </CardContent>
-            </Card>
+            <ScrollAnimation key={index} delay={index * 0.1}>
+              <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-md bg-white rounded-2xl">
+                <CardHeader className="text-center pb-4">
+                  <div
+                    className={`w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${service.color} flex items-center justify-center text-xl sm:text-2xl group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    {service.icon}
+                  </div>
+                  <CardTitle className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-center px-4">
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </ScrollAnimation>
           ))}
         </div>
       </div>

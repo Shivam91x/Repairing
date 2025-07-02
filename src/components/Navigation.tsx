@@ -15,7 +15,7 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-200/60 backdrop-blur-lg border-b border-gray-300 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
@@ -38,13 +38,15 @@ export const Navigation = () => {
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-3">
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-blue-600 text-blue-600 hover:bg-blue-50"
-            >
-              Call Now
-            </Button>
+            <a href="tel:1234567890" tabIndex={-1}>
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-blue-600 text-blue-600 hover:bg-blue-50"
+              >
+                Call Now
+              </Button>
+            </a>
             <Button
               size="sm"
               className="bg-blue-600 hover:bg-blue-700 text-white"

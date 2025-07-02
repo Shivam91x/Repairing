@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Star, Shield, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Products = () => {
@@ -16,7 +16,7 @@ export const Products = () => {
       features: ["UV/UF Filter", "Smart indicators", "Wall mountable"],
       rating: 4.8,
       label: "On Sale (Offline Only)",
-      mrp: "₹13,499",
+      mrp: "\u20B913,499",
     },
     {
       name: "Energy Efficient Geyser",
@@ -27,7 +27,7 @@ export const Products = () => {
       features: ["Auto cutoff", "Fast heating", "Remote control"],
       rating: 4.7,
       label: "Limited Stock",
-      mrp: "₹9,999",
+      mrp: "\u20B99,999",
     },
     {
       name: "Auto-Clean Chimney",
@@ -38,7 +38,7 @@ export const Products = () => {
       features: ["Auto-clean", "Touch controls", "LED lighting"],
       rating: 4.9,
       label: "On Sale (Offline Only)",
-      mrp: "₹14,999",
+      mrp: "\u20B914,999",
     },
     {
       name: "Desert Air Cooler",
@@ -49,7 +49,7 @@ export const Products = () => {
       features: ["Remote included", "Ice chamber", "Honeycomb pads"],
       rating: 4.6,
       label: "In-Store Only",
-      mrp: "₹6,499",
+      mrp: "\u20B96,499",
     },
     {
       name: "BLDC Ceiling Fan",
@@ -60,7 +60,7 @@ export const Products = () => {
       features: ["BLDC motor", "Smart remote", "Silent operation"],
       rating: 4.8,
       label: "Hot Deal",
-      mrp: "₹3,499",
+      mrp: "\u20B93,499",
     },
     {
       name: "Washing Machine",
@@ -71,18 +71,15 @@ export const Products = () => {
       features: ["Child lock", "Quick wash", "Energy Star certified"],
       rating: 4.7,
       label: "On Sale (Offline Only)",
-      mrp: "₹18,499",
+      mrp: "\u20B918,499",
     },
   ];
 
   return (
-    <section
-      id="products"
-      className="py-16 bg-gradient-to-br from-slate-50 via-white to-blue-50"
-    >
+    <section className="py-16 bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-4 animate-pulse">
+          <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Shield className="w-4 h-4 mr-2" />
             Shop Offline with Confidence
           </div>
@@ -98,19 +95,19 @@ export const Products = () => {
           {products.map((product, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="group bg-white border border-gray-100 shadow hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden">
-                <div className="relative overflow-hidden">
+              <Card className="group bg-white border border-gray-100 shadow hover:shadow-lg transition-all duration-300 rounded-xl overflow-hidden">
+                <div className="relative">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 text-xs font-semibold rounded-full shadow animate-bounce">
+                  <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 text-xs font-semibold rounded-full shadow">
                     {product.label}
                   </div>
                   <div className="absolute top-4 right-4 bg-white/90 text-gray-700 px-2 py-1 rounded-full text-xs shadow flex items-center">
@@ -123,14 +120,19 @@ export const Products = () => {
                   <h3 className="text-lg font-semibold text-gray-800">
                     {product.name}
                   </h3>
-                  <p className="text-xs text-gray-500 mb-2">
+                  <p className="text-xs text-gray-500 mb-1">
                     {product.category}
                   </p>
-                  <p className="text-sm text-gray-600 mb-2">
+                  <p className="text-sm text-gray-600 mb-1">
                     {product.description}
                   </p>
 
-                  <p className="text-sm text-gray-800 font-medium mb-3">
+                  <p className="text-xs text-red-600 font-medium mt-1 flex items-center gap-1 animate-pulse">
+                    <Zap className="w-3 h-3 stroke-red-600" /> Limited Stock
+                    Available
+                  </p>
+
+                  <p className="text-sm text-gray-800 font-medium mt-2 mb-2">
                     <span className="line-through text-gray-400 mr-2">
                       {product.mrp}
                     </span>
@@ -151,14 +153,14 @@ export const Products = () => {
                   <div className="flex gap-2">
                     <Button
                       size="sm"
-                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm transition-all duration-300 hover:scale-105"
+                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm"
                     >
                       Visit Store
                     </Button>
                     <Button
                       size="sm"
                       variant="outline"
-                      className="flex-1 text-green-700 border-green-400 hover:bg-green-50 text-sm transition-all duration-300 hover:scale-105"
+                      className="flex-1 text-green-700 border-green-400 hover:bg-green-50 text-sm"
                     >
                       Call to Buy
                     </Button>

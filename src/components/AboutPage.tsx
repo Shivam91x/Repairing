@@ -47,17 +47,30 @@ export default function AboutPage() {
   const isVisible = (id: string) => visibleSections.has(id);
 
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* Floating Icons - Simplified */}
-      <div className="fixed inset-0 pointer-events-none">
+    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-slate-100 to-blue-100 relative overflow-hidden">
+      {/* Background Icons & Design */}
+      <div className="absolute inset-0 pointer-events-none z-0">
         <Wrench
-          className="absolute top-32 right-1/4 w-6 h-6 text-blue-200 opacity-20 animate-pulse"
+          className="absolute top-32 right-1/4 w-8 h-8 text-blue-200 opacity-20 animate-pulse"
           style={{ animationDuration: "4s" }}
         />
         <Shield
-          className="absolute bottom-1/3 left-1/4 w-5 h-5 text-blue-100 opacity-15 animate-pulse"
+          className="absolute bottom-1/3 left-1/4 w-7 h-7 text-blue-100 opacity-15 animate-pulse"
           style={{ animationDelay: "2s", animationDuration: "6s" }}
         />
+        <Wrench
+          className="absolute bottom-10 right-10 w-6 h-6 text-blue-300 opacity-10 animate-bounce"
+          style={{ animationDuration: "7s" }}
+        />
+        <div className="absolute top-10 left-10 text-blue-200 text-xl font-bold opacity-10 rotate-12">
+          SALES
+        </div>
+        <div className="absolute bottom-10 left-1/3 text-blue-300 text-xl font-bold opacity-10 -rotate-6">
+          REPAIR
+        </div>
+        <div className="absolute top-1/2 right-1/3 text-blue-200 text-xl font-bold opacity-10 rotate-6">
+          SERVICE
+        </div>
       </div>
 
       {/* Header Section */}
