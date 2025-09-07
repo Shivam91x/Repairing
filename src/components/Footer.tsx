@@ -11,31 +11,29 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
+import { text } from "stream/consumers";
 
 export const Footer = () => {
   const contactInfo = [
-    { icon: Phone, text: "+91 98765 43210", href: "tel:+919876543210" },
-    {
-      icon: Mail,
-      text: "info@homeappliance.com",
-      href: "mailto:info@homeappliance.com",
-    },
-    {
-      icon: MapPin,
-      text: "123 Main Street, City, State 12345",
-      href: "https://maps.google.com/?q=123+Main+Street+City+State+12345",
-    },
-    { icon: Clock, text: "Mon-Sat: 9AM-7PM", href: "#" },
-  ];
+  { icon: Phone, text: "+91 6264022721", href: "tel:+916264022721" },
+  {
+    icon: Mail,
+    text: "info@homeappliance.com",
+    href: "mailto:info@homeappliance.com",
+  },
+  {
+    icon: MapPin,
+    text: "Mahalaxmi Nagar, Indore, Madhya Pradesh",
+    href: "https://maps.google.com/?q=Mahalaxmi+Nagar+Indore",
+  },
+  {
+    icon: MapPin,
+    text: "Bhawarkuwan, Indore, Madhya Pradesh",
+    href: "https://maps.google.com/?q=Bhawarkuwan+Indore",
+  },
+  { icon: Clock, text: "Mon-Sat: 9AM-7PM", href: "#" },
+];
 
-  const services = [
-    "RO Repair & Installation",
-    "Geyser Service & Maintenance",
-    "Chimney Cleaning & Repair",
-    "Air Cooler Service",
-    "Washing Machine Repair",
-    "Refrigerator Service",
-  ];
 
   const socialLinks = [
     {
@@ -43,11 +41,7 @@ export const Footer = () => {
       href: "https://facebook.com/homeappliance",
       color: "hover:text-blue-500",
     },
-    {
-      icon: Twitter,
-      href: "https://twitter.com/homeappliance",
-      color: "hover:text-sky-400",
-    },
+    
     {
       icon: Instagram,
       href: "https://instagram.com/homeappliance",
@@ -55,9 +49,20 @@ export const Footer = () => {
     },
     {
       icon: SiWhatsapp,
-      href: "https://wa.me/919876543210",
+      href: "https://wa.me/916264022721",
       color: "hover:text-green-500",
     },
+  ];
+
+  const services = [
+    "AC Repair & Service",
+    "Refrigerator Repair",
+    "Washing Machine Repair",
+    "Microwave Oven Repair",
+    "Water Purifier Service",
+    "Geyser Repair",
+    "TV Repair",
+    "Other Appliance Services",
   ];
 
   return (
@@ -181,7 +186,7 @@ export const Footer = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-gray-400 text-sm">
-                &copy; 2024 HomeAppliance. All rights reserved.
+                &copy; 2025 HomeAppliance. All rights reserved.
               </p>
               <div className="flex items-center space-x-6 text-sm text-gray-400">
                 <span className="flex items-center">

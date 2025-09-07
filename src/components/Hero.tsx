@@ -110,7 +110,7 @@ export const Hero = () => {
         <ScrollAnimation delay={0.2}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4 w-full">
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/+916264022721"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto"

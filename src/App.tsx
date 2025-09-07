@@ -37,7 +37,7 @@ const App = () => {
           {/* WhatsApp + Call Buttons */}
           <div className="fixed z-50 flex flex-col gap-4 bottom-6 right-6 md:bottom-8 md:right-8">
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/916264022721"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp"
@@ -46,7 +46,7 @@ const App = () => {
               <SiWhatsapp size={32} />
             </a>
             <a
-              href="tel:+919876543210"
+              href="tel:+916264022721"
               aria-label="Call Now"
               className="flex items-center justify-center w-14 h-14 rounded-full shadow-lg bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
             >

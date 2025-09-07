@@ -4,8 +4,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, Shield, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export const Products = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // detect device
+    const checkMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    setIsMobile(checkMobile);
+  }, []);
+
   const products = [
     {
       name: "Premium RO System",
@@ -78,9 +87,17 @@ export const Products = () => {
             <Shield className="w-4 h-4 mr-2" />
             Shop Offline with Confidence
           </div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-2">
-            Products <span className="text-blue-600">On Sale</span>
+
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 text-center">
+            <span className="relative">
+              Products
+              <span className="absolute left-0 -bottom-1 w-full h-1 bg-blue-600/70 rounded-full"></span>
+            </span>{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
+              On Sale
+            </span>
           </h2>
+
           <p className="text-gray-600 text-base md:text-lg max-w-xl mx-auto">
             Available for purchase at our service center. Quality guaranteed.
           </p>
@@ -150,18 +167,47 @@ export const Products = () => {
 
                   {/* Buttons */}
                   <div className="flex gap-2">
-                    <Button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm">
-                      Visit Store
-                    </Button>
-                    <a href="tel:1234567890" className="flex-1" tabIndex={-1}>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="w-full text-green-700 border-green-400 hover:bg-green-50 text-sm"
+                    {/* Visit Store → Google Maps */}
+                    <Button
+                      asChild
+                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm"
+                    >
+                      <a
+                        href="https://www.google.com/maps?q=Indore,+Madhya+Pradesh"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        Call to Buy
-                      </Button>
-                    </a>
+                        Visit Store
+                      </a>
+                    </Button>
+
+                    {/* Call / WhatsApp */}
+                    {isMobile ? (
+                      <a href="tel:6264022721" className="flex-1" tabIndex={-1}>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="w-full text-green-700 border-green-400 hover:bg-green-50 text-sm"
+                        >
+                          Call Now
+                        </Button>
+                      </a>
+                    ) : (
+                      <a
+                        href="https://wa.me/916264022721?text=Hello%20I%20am%20interested%20in%20your%20products"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1"
+                      >
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="w-full text-green-700 border-green-400 hover:bg-green-50 text-sm"
+                        >
+                          WhatsApp
+                        </Button>
+                      </a>
+                    )}
                   </div>
                 </CardContent>
               </Card>

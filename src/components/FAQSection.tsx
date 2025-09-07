@@ -5,28 +5,25 @@ import { motion } from "framer-motion";
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const faqs = [
-    {
-      question: "How can I book a repair service?",
-      answer:
-        "You can easily book a repair service by visiting our 'Repair Service' section, choosing your appliance type, and filling out the booking form.",
-    },
-    {
-      question: "Are the products available for online purchase?",
-      answer:
-        "Currently, our products are available for offline purchase only. Please visit our store for more details.",
-    },
-    {
-      question: "Do you provide warranty on repairs?",
-      answer:
-        "Yes, we provide limited-time warranty on selected repair services depending on the appliance type.",
-    },
-    {
-      question: "How could you order appliance items?",
-      answer:
-        "You can check available products on the 'Products' page and then visit our store to place an order. Online ordering is coming soon.",
-    },
-  ];
+const faqs = [
+  {
+    question: "How can I book a repair service?",
+    answer: "Whatsapp par message ya call karke repair service book kar sakte ho."
+  },
+  {
+    question: "Are the products available for online purchase?",
+    answer: "Products offline purchase ke liye available hai. Website ke through Whatsapp ya call karke details bhi le sakte ho."
+  },
+  {
+    question: "Do you provide warranty on repairs?",
+    answer: "Haan, selected repairs par warranty provide ki jaati hai. Warranty duration service ke type par depend karta hai."
+  },
+  {
+    question: "How could you order appliance items?",
+    answer: "Aap products website ke through order request kar sakte ho ya directly hamare shop visit kar sakte ho (Mahalakshmi Nagar Indore & Bhawarkuwa Indore)."
+  }
+  
+];
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);

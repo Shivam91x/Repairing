@@ -27,7 +27,7 @@ const products: Product[] = [
   },
   {
     id: "2",
-    title: "Kitchen Chimney 1",
+    title: "Kitchen Chimney",
     category: "Kitchen Appliance",
     price: "Contact for Price",
     image: chimney1Img,

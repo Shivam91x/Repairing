@@ -68,7 +68,7 @@ export default function ContactPage() {
               <CardContent className="text-center">
                 <Phone className="mx-auto mb-2 text-blue-600" />
                 <h4 className="text-lg font-semibold mb-1">Call Us</h4>
-                <p className="text-sm text-gray-600">+91 98765 43210</p>
+                <p className="text-sm text-gray-600">+91 6264022721</p>
               </CardContent>
             </Card>
 
@@ -85,7 +85,8 @@ export default function ContactPage() {
                 <MapPin className="mx-auto mb-2 text-blue-600" />
                 <h4 className="text-lg font-semibold mb-1">Visit Us</h4>
                 <p className="text-sm text-gray-600">
-                  123 Main Road, Service Center Lane, Indore
+                  Mahalaxmi Nagar, Indore, Madhya Pradesh
+                  Bhawarkuwan, Indore, Madhya Pradesh
                 </p>
               </CardContent>
             </Card>
