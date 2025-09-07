@@ -31,7 +31,7 @@ export const Footer = () => {
     text: "Bhawarkuwan, Indore, Madhya Pradesh",
     href: "https://maps.google.com/?q=Bhawarkuwan+Indore",
   },
-  { icon: Clock, text: "Mon-Sat: 9AM-7PM", href: "#" },
+  { icon: Clock, text: "Monday-Sunday: 9AM-7PM" },
 ];
 
 
@@ -56,12 +56,11 @@ export const Footer = () => {
 
   const services = [
     "AC Repair & Service",
-    "Refrigerator Repair",
+    "RO System Repair",
     "Washing Machine Repair",
-    "Microwave Oven Repair",
+    "Ceiling Fan Repair",
     "Water Purifier Service",
     "Geyser Repair",
-    "TV Repair",
     "Other Appliance Services",
   ];
 
