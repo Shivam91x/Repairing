@@ -66,16 +66,7 @@ export const Products = () => {
       label: "Hot Deal",
       mrp: "₹3,499",
     },
-    {
-      name: "Washing Machine",
-      category: "Laundry",
-      image: "/productImages/Washing_Machine_PNG.png",
-      description: "Fully automatic front-load with 15+ wash modes.",
-      features: ["Child lock", "Quick wash", "Energy Star certified"],
-      rating: 4.7,
-      label: "On Sale (Offline Only)",
-      mrp: "₹18,499",
-    },
+    
   ];
 
   return (

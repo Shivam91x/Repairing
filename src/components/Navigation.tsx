@@ -19,7 +19,6 @@ export const Navigation = () => {
         { name: "Kitchen Chimney Repair", href: "#services" },
         { name: "Ceiling Fan Repair", href: "#services" },
         { name: "Air Cooler Repair", href: "#services" },
-        { name: "Washing Machine Repair", href: "#services" },
       ],
     },
     {
@@ -31,7 +30,6 @@ export const Navigation = () => {
         { name: "Kitchen Chimney", href: "#products" },
         { name: "Ceiling Fan", href: "#products" },
         { name: "Air Cooler", href: "#products" },
-        { name: "Washing Machine", href: "#products" },
       ],
     },
     { name: "About", href: "#about" },
@@ -164,12 +162,14 @@ export const Navigation = () => {
 
             {/* Mobile Buttons */}
             <div className="pt-4 space-y-2">
-              <Button
-                variant="outline"
-                className="w-full border-blue-600 text-blue-600 hover:bg-blue-50"
-              >
-                Call Now
-              </Button>
+              <a href="tel:+916264022721" tabIndex={-1}>
+                <Button
+                  variant="outline"
+                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-50"
+                >
+                  Call Now
+                </Button>
+              </a>
               <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                 Get Quote
               </Button>

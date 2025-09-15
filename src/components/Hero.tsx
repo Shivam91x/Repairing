@@ -149,7 +149,7 @@ export const Hero = () => {
             <p className="text-base xs:text-lg sm:text-xl text-gray-700 mb-8 sm:mb-12 leading-relaxed">
               Expert repair services and premium appliances for your home.
               <br className="hidden xs:block" />
-              From RO systems to washing machines, we ensure quality and
+              From RO systems to Cielling fans, we ensure quality and
               reliability.
             </p>
 

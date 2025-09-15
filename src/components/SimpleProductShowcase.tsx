@@ -12,7 +12,6 @@ type Product = {
 const roImg = "/productTop/ROSystem.png";
 const chimney1Img = "/productTop/kitchen_chemney1.png";
 const geyserImg = "/productTop/gyser.png";
-const washingMachineImg = "/productTop/Washing_Machine_PNG.png";
 const coolerImg = "/productTop/cooler.png";
 const ceilingFanImg = "/productTop/ceillingFan.png";
 
@@ -33,7 +32,6 @@ const products: Product[] = [
     image: chimney1Img,
     type: "product",
   },
-  
   {
     id: "3",
     title: "Energy Efficient Geyser",
@@ -58,14 +56,6 @@ const products: Product[] = [
     image: ceilingFanImg,
     type: "product",
   },
-  {
-    id: "6",
-    title: "Washing Machine",
-    category: "Laundry",
-    price: "Contact for Price",
-    image: washingMachineImg,
-    type: "product",
-  },
 ];
 
 export const SimpleProductShowcase = () => {
@@ -76,7 +66,54 @@ export const SimpleProductShowcase = () => {
           Top Selling Products
         </h2>
 
-        {/* Scrollable Container with fade effect */}
+        {/* --- Featured RO Section --- */}
+        <div className="mb-12">
+          <div className="relative bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-300 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6 shadow-xl hover:shadow-2xl transition">
+            {/* Highlight Badge */}
+            <span className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+              ⭐ Best Seller
+            </span>
+
+            <div className="flex-1 flex items-center justify-center">
+              <img
+                src={roImg}
+                alt="RO System"
+                className="w-64 h-64 object-contain transition-transform duration-300 hover:scale-110"
+              />
+            </div>
+
+            <div className="flex-1 text-center md:text-left">
+              <h3 className="text-2xl font-bold text-blue-800 mb-3">
+                Premium RO Water Purifier
+              </h3>
+
+              {/* Feature Badges */}
+              <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
+                <span className="px-3 py-1 text-xs bg-white border border-blue-200 rounded-full text-blue-700 font-medium">
+                  RO + UV
+                </span>
+                <span className="px-3 py-1 text-xs bg-white border border-blue-200 rounded-full text-blue-700 font-medium">
+                  TDS Control
+                </span>
+                <span className="px-3 py-1 text-xs bg-white border border-blue-200 rounded-full text-blue-700 font-medium">
+                  Copper Alkaline
+                </span>
+              </div>
+
+              <p className="text-gray-600 mb-4">
+                Safe, pure, and healthy drinking water for your family.
+                <br />
+                Installation & Repair Services Available.
+              </p>
+
+              <button className="px-6 py-2 rounded-lg bg-blue-600 text-white font-medium shadow-md hover:bg-blue-700 transition">
+                Contact for Price
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* --- Scrollable Products --- */}
         <div className="relative">
           {/* Left fade */}
           <div className="absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />

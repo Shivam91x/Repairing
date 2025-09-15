@@ -40,13 +40,7 @@ export const Services = () => {
       icon: "🌀",
       color: "from-purple-500 to-indigo-500",
     },
-    {
-      title: "Washing Machine",
-      description:
-        "Expert washing machine repair and maintenance for all brands.",
-      icon: "🧺",
-      color: "from-pink-500 to-rose-500",
-    },
+   
   ];
 
   return (

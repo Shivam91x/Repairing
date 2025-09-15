@@ -57,7 +57,6 @@ export const Footer = () => {
   const services = [
     "AC Repair & Service",
     "RO System Repair",
-    "Washing Machine Repair",
     "Ceiling Fan Repair",
     "Water Purifier Service",
     "Geyser Repair",
