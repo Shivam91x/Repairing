@@ -106,9 +106,15 @@ export const SimpleProductShowcase = () => {
                 Installation & Repair Services Available.
               </p>
 
-              <button className="px-6 py-2 rounded-lg bg-blue-600 text-white font-medium shadow-md hover:bg-blue-700 transition">
+              {/* WhatsApp Redirect Button */}
+              <a
+                href="https://wa.me/916264022721?text=Hi, I want to know about your RO System"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-2 rounded-lg bg-blue-600 text-white font-medium shadow-md hover:bg-blue-700 transition"
+              >
                 Contact for Price
-              </button>
+              </a>
             </div>
           </div>
         </div>
